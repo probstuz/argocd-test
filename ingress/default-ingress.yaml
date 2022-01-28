@@ -23,3 +23,10 @@ spec:
               name: banana-service
               port:
                 number: 5678
+        - path: /guestbook
+          pathType: Prefix
+          backend:
+            service:
+              name: guestbook-ui
+              port:
+                number: 80
