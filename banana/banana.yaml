@@ -21,4 +21,4 @@ spec:
   selector:
     app: banana
   ports:
-    - port: 5678
+    - port: 1561
