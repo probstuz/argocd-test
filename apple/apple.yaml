@@ -21,4 +21,4 @@ spec:
   selector:
     app: apple
   ports:
-    - port: 7654
+    - port: 5678
