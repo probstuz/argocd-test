@@ -1,31 +1,16 @@
-version: '3.1'
-
-services:
-
-  wordpress:
-    image: wordpress
-    restart: always
-    ports:
-      - 8080:80
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: exampleuser
-      WORDPRESS_DB_PASSWORD: examplepass
-      WORDPRESS_DB_NAME: exampledb
-    volumes:
-      - wordpress:/var/www/html
-
-  db:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: exampledb
-      MYSQL_USER: exampleuser
-      MYSQL_PASSWORD: examplepass
-      MYSQL_RANDOM_ROOT_PASSWORD: '1'
-    volumes:
-      - db:/var/lib/mysql
-
-volumes:
-  wordpress:
-  db:
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: wordpress-blog
+spec:
+  containers:
+  - name: wordpress-blog
+    image: wordpress:5.2
+    env:
+    - name: WORDPRESS_DB_HOST
+      value: database.host.name:3306
+    - name: WORDPRESS_DB_NAME
+      value: wordpress
+    - name: WORDPRESS_DB_PREFIX
+      value: myblog_ 
