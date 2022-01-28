@@ -9,10 +9,10 @@ spec:
   rules:
   - http:
       paths:
-        - path: /guestbook
-          pathType: Prefix
-          backend:
-            service:
-              name: guestbook-ui
-              port:
-                name: http
+      - path: /guestbook
+        pathType: Prefix
+        backend:
+          service:
+            name: guestbook-ui
+            port:
+              number: 80
