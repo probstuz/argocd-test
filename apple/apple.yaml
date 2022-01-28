@@ -21,4 +21,4 @@ spec:
   selector:
     app: apple
   ports:
-    - port: 5678
+    - port: 80
