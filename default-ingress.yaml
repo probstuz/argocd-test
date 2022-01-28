@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   rules:
-  - host: 10.239.211.55
+  - host: "10.239.211.55"
     http:
       paths:
       - path: /
