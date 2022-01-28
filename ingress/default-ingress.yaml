@@ -15,7 +15,7 @@ spec:
             service:
               name: apple-service
               port:
-                number: 7654
+                number: 5678
         - path: /banana
           pathType: Prefix
           backend:
@@ -29,4 +29,4 @@ spec:
             service:
               name: kustomize-guestbook-ui
               port:
-                number: 4567
+                number: 5678
