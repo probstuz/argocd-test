@@ -1,18 +1,22 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: default-ingress
-  namespace: default
+  name: example-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: localhost
-    http:
+  - http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: guestbook-ui
-            port:
-              number: 80
-  ingressClassName: nginx
+        - path: /apple
+          pathType: Prefix
+          backend:
+            service:
+              name: apple-service
+              port: 5678
+        - path: /banana
+          pathType: Prefix
+          backend:
+            service:
+              name: banana-service
+              port: 5678
